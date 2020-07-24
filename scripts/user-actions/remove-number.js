@@ -9,7 +9,7 @@ console.log('--- loading: remove number');
  * @param {number} toRemove - the number to remove
  * @returns {number[]} the filtered numbers
  */
-const removeNumber = (arrOfNumbers, toRemove) => {
+const removeNumber = (arrOfNumbers = numbers, toRemove = userNumber) => {
   if (!Array.isArray(arrOfNumbers)) {
     throw new TypeError('first parameter must be an array');
   }
@@ -21,6 +21,15 @@ const removeNumber = (arrOfNumbers, toRemove) => {
   }
 
   // write the logic!
+  let result = [];
+  for (let item of arrOfNumbers) {
+    if (item != toRemove) {
+      result.push(item); 
+      }
+    }
+
+  return result;
+
 };
 
 
@@ -76,20 +85,20 @@ const removeNumberHandler = () => {
   console.log('\n--- calling: remove number handler');
   console.log('numbers (before):', typeof numbers, '\n', numbers);
 
-  const userInput = _;
+  const userInput = prompt('enter a number to remove');
   console.log('userInput:', typeof userInput, '\n', userInput);
-  if (_) {
+  if ( userInput == null ) {
     return;
   }
 
-  const userNumber = _;
+  const userNumber = Number(userInput);
   console.log('userNumber:', typeof userNumber, '\n', userNumber);
-  if (_) {
+  if (Object.is(userNumber, NaN)) {
     alert(`${userInput} is not a valid number`);
     return;
   }
 
-  numbers = _;
+  numbers = removeNumber(numbers, userNumber);
   console.log('numbers (after):', typeof numbers, '\n', numbers);
 
   displayArrayHandler(numbers, `successfully removed ${userNumber}`);
