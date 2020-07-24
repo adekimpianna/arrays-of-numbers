@@ -19,8 +19,8 @@ const reduceForAlert = (arrOfNumbers = numbers) => {
   // write the logic!
   // let numbers = [1, 2, 3, 4];
   let stringToDisplay = ''; // from function at the bottom
-  for (let i = 0; i < numbers.length ; i++) {
-      stringToDisplay += numbers[i] + '\n'; // numbers[i] to show the values of the array
+  for (let i = 0; i < arrOfNumbers.length ; i++) {
+      stringToDisplay += arrOfNumbers[i] + '\n'; // numbers[i] to show the values of the array
     }
   
   return stringToDisplay;
