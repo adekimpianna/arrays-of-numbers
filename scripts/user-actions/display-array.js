@@ -8,7 +8,7 @@ console.log('--- loading: display array');
  * @param {number[]} arrOfNumbers - an array of numbers to reduce
  * @returns {string} a string of numbers on newlines
  */
-const reduceForAlert = (arrOfNumbers) => {
+const reduceForAlert = (arrOfNumbers = numbers) => {
   if (!Array.isArray(arrOfNumbers)) {
     throw new TypeError('parameter must be an array');
   }
@@ -17,6 +17,14 @@ const reduceForAlert = (arrOfNumbers) => {
   }
 
   // write the logic!
+  // let numbers = [1, 2, 3, 4];
+  let stringToDisplay = ''; // from function at the bottom
+  for (let i = 0; i < numbers.length ; i++) {
+      stringToDisplay += numbers[i] + '\n'; // numbers[i] to show the values of the array
+    }
+  
+  return stringToDisplay;
+  
 };
 
 
